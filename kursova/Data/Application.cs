@@ -8,6 +8,7 @@ namespace kursova.Data;
 
 public partial class Application
 {
+    //git commit
     public int Id { get; set; }
 
     public DateTime? Date { get; set; } = DateTime.Today;
