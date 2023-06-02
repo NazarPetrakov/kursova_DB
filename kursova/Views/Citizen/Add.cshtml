@@ -1,0 +1,23 @@
+﻿@model kursova.Models.AddCitizenViewModel
+@{ViewData["Title"] = "Add Citizens";
+}
+<h1>Add Citizen</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">First Name</label>
+        <input type="text" class="form-control" asp-for="FirstName">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Last Name</label>
+        <input type="text" class="form-control" asp-for="LastName">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" asp-for="PhoneNumber">
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

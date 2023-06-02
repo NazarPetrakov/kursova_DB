@@ -1,0 +1,28 @@
+﻿@model kursova.Models.AddApplicationViewModel
+@{ViewData["Title"] = "Add Application";}
+<h1>Add Application</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">Date</label>
+        <input type="datetime-local" class="form-control" asp-for="Date">
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Content</label>
+        <textarea class="form-control" rows="3" asp-for="Content"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Citizen ID</label>
+        <select class="form-select" asp-for="CitizenId" asp-items="@ViewBag.CitizenOptions">
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Specialist ID</label>
+        <select class="form-select" asp-for="SpecialistId" asp-items="@ViewBag.SpecialistOptions">
+            <option>- Select Specialist -</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

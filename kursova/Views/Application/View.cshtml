@@ -1,0 +1,47 @@
+﻿@model kursova.Models.UpdateApplicationViewModel
+
+@{ViewData["Title"] = "Edit Application";
+}
+<h1>Edit Application</h1>
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label">ID</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Date</label>
+        <input type="datetime-local" class="form-control" asp-for="Date">
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Content</label>
+        <textarea class="form-control" rows="3" asp-for="Content"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Citizen ID</label>
+        <select class="form-select" asp-for="CitizenId" asp-items="@ViewBag.CitizenOptions">
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Specialist ID</label>
+        <select class="form-select" asp-for="SpecialistId" asp-items="@ViewBag.SpecialistOptions">
+            <option>- Select Specialist -</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label">Status</label>
+        <select class="form-select" asp-for="Status">
+            <option value="Not accepted">Not accepted</option>
+            <option value="Accepted">Accepted</option>
+            <option value="Complete">Complete</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger"
+            asp-action="Delete"
+            asp-controller="Application">
+        Delete
+    </button>
+</form>

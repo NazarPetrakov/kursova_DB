@@ -1,0 +1,27 @@
+﻿@model List<kursova.Data.Specialist>
+@{ViewData["Title"] = "Specialists";}
+<h1>Specialists</h1>
+<a asp-area="" asp-controller="Specialist" asp-action="Add" class="btn btn-primary"><b>&#65291</b> Add Specialist</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Specialty</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var specialist in Model)
+    {
+        <tr>
+            <td>@specialist.Id</td>
+            <td>@specialist.FirstName</td>
+            <td>@specialist.LastName</td>
+            <td>@specialist.Specialty</td>
+            <td><a href="Specialist/View/@specialist.Id">Edit</a></td>
+        </tr>
+    }
+    </tbody>
+</table>
